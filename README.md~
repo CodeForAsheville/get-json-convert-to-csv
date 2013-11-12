@@ -12,6 +12,6 @@ A converter for getting nested/complex json data from a webservice and convertin
 
 ##Usage
 
-basic usage (work in progress)
+basic usage
 
 	python convert.py www.somedomain.com/jsondata.json jsondata.csv json-rowkey
