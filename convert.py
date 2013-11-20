@@ -21,7 +21,7 @@ def main(data):
 				print v.keys()
 				vals=v.values()
 				CSVLine = ', '.join(vals)
-				print CSVLine
+				print CSVLine 
 				print ''
 				
 			#if not(isinstance(v,dict)) and not(isinstance(v,list)):
