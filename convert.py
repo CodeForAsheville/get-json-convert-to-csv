@@ -19,8 +19,7 @@ def main(data):
 		for k,v in d.items():
 			if checkrowkey(k):
 				print v.keys()
-				vals=v.values()
-				CSVLine = ', '.join(vals)
+				CSVLine = ', '.join(v.values())
 				print CSVLine 
 				print ''
 				
