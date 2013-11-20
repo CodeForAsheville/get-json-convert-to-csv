@@ -19,7 +19,9 @@ def main(data):
 		for k,v in d.items():
 			if checkrowkey(k):
 				print v.keys()
-				print v.values()
+				vals=v.values()
+				CSVLine = ', '.join(vals)
+				print CSVLine
 				print ''
 				
 			#if not(isinstance(v,dict)) and not(isinstance(v,list)):
