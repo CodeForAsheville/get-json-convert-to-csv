@@ -1,1 +1,2 @@
 unicodecsv==0.9.0
+simplejson==3.3.1
