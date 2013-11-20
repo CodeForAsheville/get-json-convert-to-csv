@@ -1,4 +1,4 @@
-import json
+import simplejson as json
 import unicodecsv as csv
 import urllib
 
@@ -6,28 +6,20 @@ url = "https://www.publicstuff.com/api/2.0/requests_list?return_type=json&limit=
 response = urllib.urlopen(url);
 data = json.loads(response.read())
 
-
+f = csv.writer(open('file.csv', 'wb+'))
+   
 def main(data):
 	rowkey="request"
 	rowkey=rowkey.upper()
 	rowData='start'
-	print rowData		
+		
 	doHeaders = True
 
 	def walkDict(d):
 		
 		for k,v in d.items():
 			if checkrowkey(k):
-				print v.keys()
-				print v.values()
-				print ''
-				
-			#if not(isinstance(v,dict)) and not(isinstance(v,list)):
-			#	#rowData = rowData + k + '=' + str(v) +','
-			#	if type(v) == unicode:
-			##	v = str(v)
-			#	
-	 		#	#print k,v,type(v)
+				f.writerow(v.values())
 			if isinstance(v,dict):
 				walkDict(v)
 			if isinstance(v,list):
@@ -46,14 +38,11 @@ def main(data):
 	def checkrowkey(k):
 		
 		if str(k).upper()==rowkey:
-			#if type(v) == unicode:
-			#	v = v.encode('UTF-8')
-			# = str(v)
-			#print v
 			return True
 		else:
 			return False
 
+	
 	walkDict(data)
 		
 
